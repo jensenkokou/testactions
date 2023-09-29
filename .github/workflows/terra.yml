@@ -4,8 +4,8 @@ on: [push]
 
 # Uncomment below when you have the environment variables set up
 env: 
-   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-   AWS_SECRET_KEY_ID: ${{ secrets.AWS_SECRET_KEY_ID }} 
+   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+   AWS_SECRET_KEY_ID: ${{ secrets.AWS_SECRET_KEY }} 
 
 jobs:
   Terraform:
