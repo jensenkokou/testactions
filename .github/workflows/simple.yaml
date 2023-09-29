@@ -16,7 +16,7 @@ jobs:
          npm -v 
     - name: python command
       run: | 
-      import platform 
+       import platform 
 
     shell: python 
   run-windows-commands: 
