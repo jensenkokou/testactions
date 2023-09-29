@@ -29,4 +29,5 @@ jobs:
       run: terraform fmt -check 
       
     - name: Plan T
+      working-directory: ./.github/
       run: terraform plan
