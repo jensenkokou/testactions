@@ -3,28 +3,33 @@ name: shell commands
 on: [push]
 
 jobs: 
- run-shell-commands: 
-  runs-on: ubuntu-latest
-  steps:
+  run-shell-commands: 
+    runs-on: ubuntu-latest
+    steps:
     - name: checkout 
       uses: actions/checkout@v3
+      
     - name: echo string 
       run: echo "Hello World"
+      
     - name: multi string 
       run: | 
-         node -v 
-         npm -v 
+        node -v 
+        npm -v 
+        
     - name: python command
-      run: | 
-       import platform 
+      run: |
+        import platform
+      shell: python
 
-    shell: python 
   run-windows-commands: 
-   runs-on: windows-latest  
-   needs: ["run-shell-commands"]
-   steps: 
+    runs-on: windows-latest  
+    needs: run-shell-commands
+    steps: 
     - name: directory
-      uses: Get-Location
+      run: Get-Location
+      shell: powershell
+      
     - name: Directory bash
       run: pwd
       shell: bash
